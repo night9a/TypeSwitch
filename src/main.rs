@@ -14,7 +14,11 @@ fn index() -> Template {
     let context: HashMap<&str, &str> = HashMap::new();
     Template::render("index", &context)
 }
-
+#[get("/convert")]
+fn convertg() -> Template {
+    let context:HashMap<&str,&str> = HashMap::new();
+    Template::render("convert",&context)
+}
 #[post("/convert", data = "<data>")]
 async fn convert(content_type: &ContentType, data: Data<'_>) -> Result<(ContentType, Vec<u8>), Status> {
     let mut options = MultipartFormDataOptions::new();
@@ -36,6 +40,6 @@ async fn convert(content_type: &ContentType, data: Data<'_>) -> Result<(ContentT
 #[launch]
 fn rocket() -> _ {
     rocket::build()
-        .mount("/", routes![index, convert])
+        .mount("/", routes![index, convert,convertg])
         .attach(Template::fairing())
 }
