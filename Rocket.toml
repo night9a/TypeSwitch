@@ -1,4 +1,4 @@
 [default]
 address = "0.0.0.0"
-port = { from = "8080" }
-secret_key = { from = "qS2u4YB4PZf93Bcz7XPjU5MgRpbx4xUz4r0Re3a/GRI=" }
+port = 8080
+secret_key = "qS2u4YB4PZf93Bcz7XPjU5MgRpbx4xUz4r0Re3a/GRI="
