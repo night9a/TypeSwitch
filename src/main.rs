@@ -8,7 +8,7 @@ fn index() -> Template {
     let context: HashMap<&str, &str> = HashMap::new(); // فارغ
     Template::render("index", &context)
 }
-
+//add route for upload
 #[launch]
 fn rocket() -> _ {
     rocket::build()
