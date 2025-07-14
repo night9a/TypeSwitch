@@ -5,10 +5,10 @@ use std::collections::HashMap;
 
 #[get("/")]
 fn index() -> Template {
-    let context: HashMap<&str, &str> = HashMap::new(); // فارغ
+    let context: HashMap<&str, &str> = HashMap::new();
     Template::render("index", &context)
 }
-//add route for upload
+
 #[launch]
 fn rocket() -> _ {
     rocket::build()
